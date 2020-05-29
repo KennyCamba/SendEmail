@@ -29,7 +29,7 @@ def send(from_addr:str, from_pass:str, to: str, subject:str, imgPath:str, firm:s
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
-        server.login(from_addr, 'c1a2m3b4a5')
+        server.login(from_addr, from_pass)
         server.sendmail(from_addr, to, msgRoot.as_string())
         server.quit()
         return True
